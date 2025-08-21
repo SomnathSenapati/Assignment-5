@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Edit Category Page" />
+    <meta name="author" content="" />
+
+    <title>Edit Category</title>
+
+    <!-- Font Awesome -->
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet" />
+
+    <!-- Custom styles -->
+    <link href="/css/sb-admin-2.min.css" rel="stylesheet" />
+    <link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <%- include('../layouts/sidebar') %>
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <%- include('../layouts/navbar') %>
+
+                <!-- Begin Page Content -->
+                <div class="container mt-5">
+                    <h1 class="mb-4">Edit Category</h1>
+
+                    <form action="/category/update/<%= category._id %>?_method=PUT" method="POST">
+                        <div class="mb-3">
+                            <label for="courseName" class="form-label fw-semibold">Category Name</label>
+                            <input 
+                                type="text" 
+                                name="categoryName" 
+                                class="form-control" 
+                                value="<%= category.categoryName %>" 
+                                required 
+                            />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary me-2">Update</button>
+                        <a href="/category/list" class="btn btn-secondary">Back</a>
+                    </form>
+                </div>
+                <!-- End Page Content -->
+            </div>
+
+            <!-- Footer -->
+            <%- include('../layouts/footer') %>
+        </div>
+        <!-- End Content Wrapper -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Scripts -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/js/sb-admin-2.min.js"></script>
+    <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="/js/demo/datatables-demo.js"></script>
+</body>
+
+</html>
